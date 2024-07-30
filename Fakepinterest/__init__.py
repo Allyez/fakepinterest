@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 
 # CONFIGURANDO A CRIAÇÃO DO BANCO DE DADOS
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://user_bancofake:PQcvFiFtBAQbs80GMjnCoueUbnYLWbWn@dpg-cqkbpf2ju9rs738keo2g-a.oregon-postgres.render.com/fake_bancodedados"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 database = SQLAlchemy(app)
 
 app.config["SECRET_KEY"] = "074fe331335d77ac3e70c298572ff506" # CHAVE SECRETA HASH PARA LOGIN
